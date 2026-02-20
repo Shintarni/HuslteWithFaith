@@ -4,7 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>HustleWithFaith</title>
-  <meta name="description" content="Built on faith. Driven by hustle. Local-only sourcing and sales." />
+  <meta name="description" content="Built on faith. Driven by hustle. Local sourcing and sales." />
+
   <style>
     :root{
       --bg:#070a12;
@@ -13,344 +14,278 @@
       --muted:#aab6d6;
       --line:rgba(255,255,255,.12);
       --accent:#f4c34f;
-      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --shadow:0 18px 60px rgba(0,0,0,.45);
       --radius:18px;
     }
+
     *{box-sizing:border-box}
+
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
       color:var(--text);
       background:
         radial-gradient(1200px 700px at 20% -10%, rgba(102,163,255,.18), transparent 55%),
         radial-gradient(900px 600px at 90% 0%, rgba(244,195,79,.16), transparent 55%),
-        linear-gradient(180deg, #050712, #070a12 35%, #050712);
+        linear-gradient(180deg,#050712,#070a12 35%,#050712);
     }
-    a{color:inherit}
-    .wrap{max-width:1100px; margin:0 auto; padding:22px}
+
+    a{color:inherit;text-decoration:none}
+
+    .wrap{max-width:1100px;margin:0 auto;padding:22px}
+
     .nav{
-      position:sticky; top:0; z-index:10;
-      background:rgba(7,10,18,.72); backdrop-filter: blur(10px);
+      position:sticky;
+      top:0;
+      background:rgba(7,10,18,.75);
+      backdrop-filter:blur(10px);
       border-bottom:1px solid var(--line);
+      z-index:10;
     }
-    .nav .wrap{display:flex; align-items:center; justify-content:space-between; gap:14px}
-    .brand{display:flex; align-items:center; gap:10px; text-decoration:none}
-    .logoImg{
-      width:34px; height:34px; border-radius:10px; object-fit:cover;
-      box-shadow: 0 10px 28px rgba(0,0,0,.35);
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.03);
+
+    .nav .wrap{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
     }
-    .links{display:flex; gap:14px; flex-wrap:wrap}
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:700;
+    }
+
+    .logo{
+      width:34px;
+      height:34px;
+      border-radius:8px;
+      background:linear-gradient(135deg,#f4c34f,#6aa3ff);
+    }
+
     .links a{
-      text-decoration:none; color:var(--muted);
-      padding:8px 10px; border-radius:12px;
-      border:1px solid transparent;
+      margin-left:14px;
+      color:var(--muted);
+      font-size:14px;
     }
-    .links a:hover{color:var(--text); border-color:var(--line); background:rgba(255,255,255,.04)}
+
+    .links a:hover{color:var(--text)}
+
     .hero{
-      padding:36px 0 12px;
-      display:grid; grid-template-columns: 1.15fr .85fr;
-      gap:18px; align-items:stretch;
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:18px;
+      padding:40px 0;
     }
-    @media (max-width: 880px){ .hero{grid-template-columns:1fr;}}
+
+    @media(max-width:800px){
+      .hero{grid-template-columns:1fr}
+    }
+
     .card{
-      background:rgba(14,20,38,.78);
+      background:rgba(14,20,38,.8);
       border:1px solid var(--line);
       border-radius:var(--radius);
-      box-shadow:var(--shadow);
       padding:22px;
+      box-shadow:var(--shadow);
     }
-    .pill{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:7px 12px; border-radius:999px;
-      border:1px solid var(--line);
+
+    h1{
+      font-size:42px;
+      margin:10px 0;
+      line-height:1.1;
+    }
+
+    p{
       color:var(--muted);
-      background: rgba(255,255,255,.03);
-      font-size:13px;
+      line-height:1.6;
     }
-    h1{margin:14px 0 10px; font-size:44px; line-height:1.06}
-    @media (max-width: 520px){ h1{font-size:36px} }
-    .grad{
-      background: linear-gradient(90deg, var(--text), rgba(244,195,79,.95));
-      -webkit-background-clip:text; background-clip:text;
-      color:transparent;
-    }
-    p{margin:0 0 12px; color:var(--muted); font-size:16px; line-height:1.6}
-    .ctaRow{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
+
     .btn{
+      display:inline-block;
+      padding:11px 16px;
+      border-radius:14px;
       border:1px solid var(--line);
+      margin:6px 6px 0 0;
       background:rgba(255,255,255,.04);
-      color:var(--text);
-      padding:11px 14px;
-      border-radius:14px;
-      text-decoration:none;
-      display:inline-flex; align-items:center; justify-content:center;
       font-weight:600;
-      cursor:pointer;
     }
-    .btn:hover{background:rgba(255,255,255,.07)}
+
     .btn.primary{
-      border-color: rgba(244,195,79,.35);
-      background: linear-gradient(135deg, rgba(244,195,79,.92), rgba(244,195,79,.55));
+      background:linear-gradient(135deg,#f4c34f,#ffd87a);
       color:#0b0f1b;
+      border:none;
     }
-    .btn.primary:hover{filter:brightness(1.03)}
-    .grid3{display:grid; grid-template-columns: repeat(3,1fr); gap:14px}
-    @media (max-width: 880px){ .grid3{grid-template-columns:1fr} }
-    .k{
-      padding:14px;
-      border-radius:16px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.03);
+
+    .btn:hover{opacity:.9}
+
+    h2{margin-bottom:10px}
+
+    .grid3{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
     }
-    .k b{display:block; margin-bottom:6px}
-    .k span{color:var(--muted); font-size:14px; line-height:1.5}
-    section{padding:14px 0}
-    h2{margin:0 0 10px; font-size:22px}
-    .two{display:grid; grid-template-columns:1fr 1fr; gap:14px}
-    @media (max-width: 880px){ .two{grid-template-columns:1fr} }
-    label{display:block; font-size:13px; color:var(--muted); margin:10px 0 6px}
-    input, textarea{
+
+    @media(max-width:800px){
+      .grid3{grid-template-columns:1fr}
+    }
+
+    input,textarea{
       width:100%;
-      padding:12px 12px;
-      border-radius:14px;
+      padding:12px;
+      border-radius:12px;
       border:1px solid var(--line);
-      background:rgba(7,10,18,.55);
+      background:#050712;
       color:var(--text);
-      outline:none;
+      margin-bottom:10px;
     }
-    textarea{min-height:110px; resize:vertical}
-    .fine{
-      font-size:12px; color:rgba(170,182,214,.85);
-      margin-top:10px;
-    }
+
+    textarea{min-height:100px}
+
     .footer{
       border-top:1px solid var(--line);
-      padding:20px 0 32px;
+      margin-top:40px;
+      padding:20px 0;
       color:var(--muted);
       font-size:13px;
-    }
-    .tag{
-      display:inline-flex; align-items:center;
-      padding:6px 10px; border-radius:999px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.03);
-      margin:6px 6px 0 0;
-      font-size:12px; color:var(--muted);
-    }
-    code.badge{
-      display:inline-block;
-      padding:6px 10px;
-      border:1px solid var(--line);
-      border-radius:12px;
-      background:rgba(255,255,255,.03);
-      color:var(--text);
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      font-size:12px;
+      text-align:center;
     }
   </style>
 </head>
 
 <body>
-  <div class="nav">
-    <div class="wrap">
-      <a class="brand" href="#top" aria-label="HustleWithFaith Home">
-        <!-- Put logo.png in the SAME repo folder as index.html -->
-        <img class="logoImg" src="logo.png" alt="HustleWithFaith Logo" />
-        <b>HustleWithFaith</b>
-      </a>
-      <div class="links">
-        <a href="#how">How it works</a>
-        <a href="#payments">Payments</a>
-        <a href="#request">Request</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact">Contact</a>
-      </div>
+
+<!-- NAV -->
+<div class="nav">
+  <div class="wrap">
+    <div class="brand">
+      <div class="logo"></div>
+      HustleWithFaith
+    </div>
+
+    <div class="links">
+      <a href="#how">How it works</a>
+      <a href="#order">Order</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
     </div>
   </div>
+</div>
 
-  <main id="top" class="wrap">
-    <div class="hero">
-      <div class="card">
-        <span class="pill">⚡✝️ Built on faith • Driven by hustle • Local only</span>
-        <h1><span class="grad">You want it — we find it (locally).</span></h1>
-        <p>
-          HustleWithFaith is a chill, faith-forward local sourcing side hustle.
-          Tell us what you’re after and we’ll find options near you with honest pricing and quick communication.
-        </p>
+<!-- MAIN -->
+<main class="wrap">
 
-        <div class="ctaRow">
-          <a class="btn primary" href="#request">Request an item</a>
-          <a class="btn" href="#payments">How to pay</a>
-          <a class="btn" href="#contact">Email us</a>
+  <!-- HERO -->
+  <div class="hero">
+
+    <div class="card">
+      <h1>You want it — we find it.</h1>
+
+      <p>
+        HustleWithFaith is a faith-based local sourcing business.
+        We find quality items near you with honest pricing and fast replies.
+      </p>
+
+      <a class="btn primary" href="#order">Request an item</a>
+      <a class="btn" href="#contact">Email us</a>
+    </div>
+
+    <div class="card">
+      <h2>Why people trust us</h2>
+
+      <div class="grid3">
+        <div class="card">
+          <b>Fast replies</b>
+          <p>No ghosting. Clear updates.</p>
         </div>
 
-        <div style="margin-top:14px;">
-          <span class="tag">Local pickup</span>
-          <span class="tag">Local delivery (optional)</span>
-          <span class="tag">Tech accessories</span>
-          <span class="tag">Cologne</span>
-          <span class="tag">Clothes & sneakers</span>
-          <span class="tag">Gifts</span>
+        <div class="card">
+          <b>Honest pricing</b>
+          <p>Item + fees + profit.</p>
         </div>
 
-        <div class="fine" style="margin-top:12px;">
-          Serving area: <b>[YOUR CITY / AREA HERE]</b> (edit this line in the code).
-        </div>
-      </div>
-
-      <div class="card">
-        <h2>Why people buy from us</h2>
-        <div class="grid3" style="grid-template-columns:1fr; gap:10px;">
-          <div class="k"><b>Fast replies</b><span>Clear communication (no ghosting).</span></div>
-          <div class="k"><b>Honest pricing</b><span>Item + fees + profit — transparent.</span></div>
-          <div class="k"><b>Local-only</b><span>No shipping stress. Faster handoff.</span></div>
+        <div class="card">
+          <b>Local only</b>
+          <p>Quick pickup or delivery.</p>
         </div>
       </div>
     </div>
 
-    <section id="how">
-      <div class="card">
-        <h2>How it works (Local)</h2>
-        <div class="grid3">
-          <div class="k"><b>1) Request</b><span>Tell us the item + budget + any details.</span></div>
-          <div class="k"><b>2) Quote</b><span>We find local options and give you a final price.</span></div>
-          <div class="k"><b>3) Handoff</b><span>After payment, we arrange pickup or local delivery.</span></div>
-        </div>
+  </div>
 
-        <div class="fine" style="margin-top:12px;">
-          Safety: pickups should be in public places (like a shopping centre).
-        </div>
+  <!-- HOW -->
+  <section id="how">
+    <div class="card">
+      <h2>How it works</h2>
+
+      <div class="grid3">
+        <div class="card">1️⃣ You request</div>
+        <div class="card">2️⃣ We source</div>
+        <div class="card">3️⃣ You collect</div>
       </div>
-    </section>
-
-    <section id="payments">
-      <div class="card">
-        <h2>Payments</h2>
-        <p>We keep it simple. Payment is required before pickup/delivery.</p>
-
-        <div class="grid3">
-          <div class="k">
-            <b>PayID / Bank Transfer</b>
-            <span>Fast + usually no fees.</span><br/><br/>
-            <span>PayID: <code class="badge">[YOUR PAYID HERE]</code></span>
-          </div>
-
-          <div class="k">
-            <b>PayPal</b>
-            <span>Pay by PayPal if you prefer.</span><br/><br/>
-            <span>PayPal: <code class="badge">hustlewithfaith@gmail.com</code></span>
-          </div>
-
-          <div class="k">
-            <b>Cash (Local pickup)</b>
-            <span>Only for local pickup in a public place.</span><br/><br/>
-            <span>Ask first so we can confirm.</span>
-          </div>
-        </div>
-
-        <div class="fine">
-          Tip: Replace the PayID placeholder in the code when you’re ready.
-        </div>
-      </div>
-    </section>
-
-    <section id="request">
-      <div class="card">
-        <h2>Request an item</h2>
-        <p>Fill this out and it’ll open your email app with the request ready to send.</p>
-
-        <form action="mailto:hustlewithfaith@gmail.com" method="post" enctype="text/plain">
-          <div class="two">
-            <div>
-              <label for="name">Your name</label>
-              <input id="name" name="Name" placeholder="First name" required />
-            </div>
-            <div>
-              <label for="reply">Your email (so we can reply)</label>
-              <input id="reply" name="Reply-To" placeholder="you@example.com" required />
-            </div>
-          </div>
-
-          <div class="two">
-            <div>
-              <label for="item">What do you want?</label>
-              <input id="item" name="Item" placeholder="e.g., cologne / hoodie / earbuds" required />
-            </div>
-            <div>
-              <label for="area">Your suburb/city (for local only)</label>
-              <input id="area" name="Area" placeholder="Suburb or city (no full address)" required />
-            </div>
-          </div>
-
-          <div class="two">
-            <div>
-              <label for="budget">Budget (optional)</label>
-              <input id="budget" name="Budget" placeholder="$30, $50, etc." />
-            </div>
-            <div>
-              <label for="handoff">Pickup or delivery?</label>
-              <input id="handoff" name="Handoff" placeholder="Pickup / Delivery (if available)" />
-            </div>
-          </div>
-
-          <label for="details">Details (size, color, brand, link/photo, deadline, etc.)</label>
-          <textarea id="details" name="Details" placeholder="Add anything that helps us find the right one."></textarea>
-
-          <div class="ctaRow">
-            <button class="btn primary" type="submit">Send request</button>
-            <a class="btn" href="mailto:hustlewithfaith@gmail.com">Email directly</a>
-          </div>
-
-          <div class="fine">
-            Note: This uses your device’s email app. If someone doesn’t have an email app set up,
-            they can email us directly at <b>hustlewithfaith@gmail.com</b>.
-          </div>
-        </form>
-      </div>
-    </section>
-
-    <section id="faq">
-      <div class="card">
-        <h2>FAQ</h2>
-        <div class="grid3">
-          <div class="k">
-            <b>Do you ship?</b>
-            <span>No — we’re local-only right now (pickup / local delivery).</span>
-          </div>
-          <div class="k">
-            <b>How do prices work?</b>
-            <span>We quote: item price + any fees + our profit. You approve first.</span>
-          </div>
-          <div class="k">
-            <b>Refunds?</b>
-            <span>If something is wrong, message us asap and we’ll handle it fairly.</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="card">
-        <h2>Contact</h2>
-        <p>Best contact for now: email.</p>
-        <div class="ctaRow">
-          <a class="btn primary" href="mailto:hustlewithfaith@gmail.com">Email HustleWithFaith</a>
-        </div>
-        <div class="fine">
-          Safety note: Don’t post your home address publicly. Meet in public places.
-        </div>
-      </div>
-    </section>
-
-    <div class="footer">
-      © <span id="year"></span> HustleWithFaith • Built on faith. Driven by hustle.
     </div>
-  </main>
+  </section>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <!-- ORDER -->
+  <section id="order">
+    <div class="card">
+      <h2>Request an item</h2>
+
+      <form action="mailto:asrielcooper@icloud.com" method="post" enctype="text/plain">
+
+        <input name="Name" placeholder="Your name" required>
+
+        <input name="Reply" placeholder="Your email" required>
+
+        <input name="Item" placeholder="What do you want?" required>
+
+        <input name="Budget" placeholder="Budget (optional)">
+
+        <textarea name="Details" placeholder="Details (size, colour, link, etc.)"></textarea>
+
+        <button class="btn primary" type="submit">Send request</button>
+
+        <a class="btn" href="mailto:asrielcooper@icloud.com">Email directly</a>
+
+      </form>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="card">
+      <h2>FAQ</h2>
+
+      <p><b>Do you ship?</b><br>No, local only.</p>
+
+      <p><b>Refunds?</b><br>We handle issues fairly.</p>
+
+      <p><b>What can I request?</b><br>Anything legal + safe.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="card">
+      <h2>Contact</h2>
+
+      <a class="btn primary" href="mailto:asrielcooper@icloud.com">
+        asrielcooper@icloud.com
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    © <span id="year"></span> HustleWithFaith • Built on faith. Driven by hustle.
+  </div>
+
+</main>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
